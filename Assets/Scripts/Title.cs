@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
+    [SerializeField] public GameObject TitlePannel;
+
     public void StartBtn()
     {
-        SceneManager.LoadScene("Game");
+        TitlePannel.SetActive(false);
+        ball_controller.canMove = true;
     }
     public void ExitBtn()
     {

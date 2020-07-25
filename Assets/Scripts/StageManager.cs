@@ -15,8 +15,6 @@ public class StageManager : MonoBehaviour
     int currentStage = 0;
 
 
-
-
     [SerializeField] Rigidbody playerRigid;
 
     [SerializeField] Transform playerOriginPos;
@@ -46,6 +44,8 @@ public class StageManager : MonoBehaviour
             Debug.Log("모든 스테이지 클리어");
         }
     }
+    
+  
     public void ExitBtn() {
         Application.Quit();
         Debug.Log("게임 종료");

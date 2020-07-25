@@ -28,17 +28,18 @@ public class SoundManager : MonoBehaviour
 
     //AudioSource : MP3플레이어 역할
     //AudioSource 안에 AudioClip을 넣어줘야함.
-
-    void Start()
+    private void Start()
     {
         instance = this; //instace에 자기자신 넣어줌.
         PlayRandomBGM();
     }
+    
     public void PlayRandomBGM()
     {
         //int random = Random.Range(0, 2); //랜덤값이 0또는1 (비지엠 2개)
-        bgmPlayer.clip = bgmSounds[0].clip;
-        bgmPlayer.Play();
+        
+            bgmPlayer.clip = bgmSounds[0].clip;
+            bgmPlayer.Play();
     }
 
     public void PlaySE(string _soundName) {

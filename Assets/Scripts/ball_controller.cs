@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ball_controller : MonoBehaviour
 {
-    public static bool canMove = true;
+    public static bool canMove = false;
 
     [Header("가로 속도변수")]
     [SerializeField] float moveSpeed;

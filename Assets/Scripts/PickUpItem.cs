@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PickUpItem : MonoBehaviour
 {
+    [SerializeField] Login login;
     [SerializeField] Text txt_ScoreItem;
     [SerializeField] Text txt_MonsterItem;
     [SerializeField] Text txt_shootingScore;
@@ -16,7 +17,7 @@ public class PickUpItem : MonoBehaviour
 
     int shootingScore;
 
-    [SerializeField] InputField NameField;
+    //[SerializeField] InputField NameField;
 
  
 
@@ -40,6 +41,13 @@ public class PickUpItem : MonoBehaviour
     public void AddRouletteScore1() { totalScore += 250; currentScore += 250; }
     public void AddRouletteScore2() { totalScore += 500; currentScore += 500; }
     public void AddRouletteScore3() { totalScore += 1000; currentScore += 1000; }
+    public void setZero() {
+        shootingScore = 0;
+        scoreItem = 0;
+        monsterItem = 0;
+        totalScore = 0;
+        currentScore = 0;
+    }
 
 
 
@@ -57,6 +65,7 @@ public class PickUpItem : MonoBehaviour
     {
         StartCoroutine(SaveCo());
     }
+  
     IEnumerator RankingCo()
     {
 
@@ -86,18 +95,14 @@ public class PickUpItem : MonoBehaviour
     }
     IEnumerator SaveCo()
     {
-
         WWWForm form = new WWWForm();
         form.AddField("Input_score", totalScore);
-        form.AddField("Input_user", NameField.text);
+        form.AddField("Input_user", login.GetID());
 
         WWW webRequest = new WWW(SaveUrl, form);
         yield return webRequest;
 
         Debug.Log(webRequest.text);
-
-
-
     }
 
 

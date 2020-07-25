@@ -31,7 +31,7 @@ public class Gun_Control : MonoBehaviour
     }
     //currentFireRate 1초에 1씩 감소
     void TryFire() {
-        if (Input.GetButton("Fire1")) {//GetButton : 버튼클릭 감지, Fire1 : 마우스 왼쪽 버튼
+        if (Input.GetButton("Fire1")&& ball_controller.canMove==true) {//GetButton : 버튼클릭 감지, Fire1 : 마우스 왼쪽 버튼
 
             if (currentFireRate <= 0)
             {

@@ -16,7 +16,9 @@ public class StatusManager : MonoBehaviour
 
     [SerializeField] MeshRenderer mesh_PlayerGraphics; //깜빡이는 대상
     //MeshRenderer : 물체의 점,선,면
-
+    public void setMaxHP() {
+        currentHp = maxHp;
+    }
 
     public void DecreaseHp(int _num) {
         SoundManager.instance.PlaySE("Obstacle");

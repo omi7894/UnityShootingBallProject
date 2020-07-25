@@ -15,7 +15,7 @@ public class Login : MonoBehaviour
     [SerializeField] GameObject FailedPanel;
     [SerializeField] GameObject SuccessPanel;
 
-    //public string GetID() { return IDInputField.text; }
+    public string GetID() { return IDInputField.text; }
 
 
     public string LoginUrl;
