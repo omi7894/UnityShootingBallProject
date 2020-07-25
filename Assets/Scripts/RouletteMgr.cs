@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class RouletteMgr : MonoBehaviour
 
     [SerializeField] StageManager SM;
     [SerializeField] PickUpItem thePick;
+
+    [SerializeField] Button start;
+    [SerializeField] Button next;
 
     public GameObject RoulettePlate;
     public GameObject RoulettePanel;
@@ -30,7 +34,11 @@ public class RouletteMgr : MonoBehaviour
         RouletteUI.SetActive(true);
     }
 
-
+    private void Start()
+    {
+        next.gameObject.SetActive(false);
+        start.gameObject.SetActive(true);
+    }
 
     /*
     void Start()
@@ -72,10 +80,13 @@ public class RouletteMgr : MonoBehaviour
 
         RouletteUI.SetActive(false);
         SM.ShowClearUI();
+        start.gameObject.SetActive(true);
+        next.gameObject.SetActive(false);
         
     }
     IEnumerator StartRoulette()
     {
+        start.gameObject.SetActive(false);
         yield return new WaitForSeconds(2f);
         float randomSpd = Random.Range(1.0f, 5.0f);
         float rotateSpeed = 100f * randomSpd;
@@ -92,7 +103,6 @@ public class RouletteMgr : MonoBehaviour
         Result();
 
         yield return new WaitForSeconds(1f);
-        //RoulettePanel.SetActive ( false );
     }
 
     void Result()
@@ -128,8 +138,7 @@ public class RouletteMgr : MonoBehaviour
         if (closetIndex == 2 || closetIndex == 5) {
             thePick.AddRouletteScore3();
         }
-
-
+        next.gameObject.SetActive(true);
 
     }
 }

@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
 {
-    //[SerializeField] Text scorItem;
-    //[SerializeField] Text monsterItem;
     [SerializeField] GameObject stageUI;
     [SerializeField] GameObject GameOverUI;
-    // [SerializeField] PickUpItem pui;
+
 
     [SerializeField] GameObject[] stages;
     int currentStage = 0;

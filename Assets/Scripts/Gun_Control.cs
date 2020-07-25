@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Gun_Control : MonoBehaviour
 {
     [Header("현재 장착된 총")]
@@ -9,16 +9,21 @@ public class Gun_Control : MonoBehaviour
 
     float currentFireRate;
 
+    [SerializeField] Text[] bullet; //남은총알
 
+ 
+  
     // Start is called before the first frame update
     void Start()
     {
         currentFireRate = 0; //맨처음엔 그냥 발사가능
+        UpdateBullet();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         FireRateCalc();
         TryFire();
         LockOnMouse();
@@ -31,7 +36,7 @@ public class Gun_Control : MonoBehaviour
     }
     //currentFireRate 1초에 1씩 감소
     void TryFire() {
-        if (Input.GetButton("Fire1")&& ball_controller.canMove==true) {//GetButton : 버튼클릭 감지, Fire1 : 마우스 왼쪽 버튼
+        if (Input.GetButton("Fire1")&& currentGun.bulletCount >0 &&ball_controller.canMove==true) {//GetButton : 버튼클릭 감지, Fire1 : 마우스 왼쪽 버튼
 
             if (currentFireRate <= 0)
             {
@@ -45,6 +50,8 @@ public class Gun_Control : MonoBehaviour
 
     void Fire() {
 
+        currentGun.bulletCount--;
+        UpdateBullet();
         Debug.Log("총알 발사");
         SoundManager.instance.PlaySE("Shoot");
         currentGun.ps_gunflash.Play();
@@ -60,5 +67,34 @@ public class Gun_Control : MonoBehaviour
         Vector3 target = new Vector3(0f, mousePos.y, mousePos.z);//target : 총이 바라보게할 목표물
         transform.LookAt(target);
 
+    }
+    public void UpdateBullet() {
+        for (int i = 0; i < bullet.Length; i++)
+        {
+
+            if (i < (currentGun.bulletCount+2) / 3)
+            {
+                bullet[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                bullet[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void AddBullet() {
+
+        for (int i = 0; i < 3; i++) {
+            if (currentGun.bulletCount < currentGun.maxBulletCount)
+            {
+                currentGun.bulletCount++;
+            }
+            else {
+                break;
+            }
+        }
+        UpdateBullet();
+       
     }
 }

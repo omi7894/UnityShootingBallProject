@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     [Header("몬스터아이템")]
     [SerializeField] GameObject monsterItem;
 
-   
+  
     
    
     
@@ -30,8 +30,7 @@ public class Bullet : MonoBehaviour
         if (other.transform.CompareTag("Monster")) {
             other.transform.GetComponent<Monster>().Damaged(damage);
             //총알과 몬스터가 부딪친다면 총알의 damage 만큼 몬스터의 체력을 깎는다.
-            var clone2 = Instantiate(monsterItem, other.transform.position, Quaternion.Euler(0, 90f, 0));
-            
+            GameObject clone2 = Instantiate(monsterItem, other.transform.position, Quaternion.Euler(0, 90f, 0));
             Destroy(clone2, 3.0f);
         }
         Destroy(clone, 0.5f); //effect제거
@@ -39,7 +38,6 @@ public class Bullet : MonoBehaviour
 
 
     }
-   
-
+ 
 
 }

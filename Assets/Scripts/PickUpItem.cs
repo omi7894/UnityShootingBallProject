@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PickUpItem : MonoBehaviour
 {
     [SerializeField] Login login;
+    [SerializeField] Gun_Control theGun;
     [SerializeField] Text txt_ScoreItem;
     [SerializeField] Text txt_MonsterItem;
     [SerializeField] Text txt_shootingScore;
@@ -17,16 +18,9 @@ public class PickUpItem : MonoBehaviour
 
     int shootingScore;
 
-    //[SerializeField] InputField NameField;
-
- 
-
-
     [SerializeField] Text txt_score;
     [SerializeField] Text txt_id;
 
-    
-   
 
     int scoreItem;
     int monsterItem;
@@ -132,6 +126,8 @@ public class PickUpItem : MonoBehaviour
                 totalScore += 700;
                 currentScore += 700;
                 txt_MonsterItem.text = " " + monsterItem;
+
+                theGun.AddBullet();
             }
             Destroy(other.gameObject);
         }

@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 public class Monster : MonoBehaviour
@@ -46,15 +48,10 @@ public class Monster : MonoBehaviour
 
             other.transform.GetComponent<StatusManager>().DecreaseHp(damage);
             Explosion();
-     
-           
         }
         if (other.transform.CompareTag("Bullet"))
         {
-
             thePick.AddShootingScore();
-         
-
         }
     }
     
@@ -64,12 +61,14 @@ public class Monster : MonoBehaviour
         if (hp <= 0) { Explosion(); }
     }
 
-    void Explosion(){
+     void Explosion(){
 
         GameObject clone = Instantiate(go_EffectPrefab, transform.position, Quaternion.identity);
         Destroy(clone, 2f);
         Destroy(gameObject);
-    } 
+    }
+    
+  
 
 
 

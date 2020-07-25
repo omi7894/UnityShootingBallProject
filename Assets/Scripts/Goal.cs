@@ -6,7 +6,7 @@ public class Goal : MonoBehaviour
 {
     [SerializeField] StageManager SM;
     [SerializeField] RouletteMgr RM;
-
+ 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) { 
