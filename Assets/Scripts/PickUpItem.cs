@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -35,6 +36,8 @@ public class PickUpItem : MonoBehaviour
     public void AddRouletteScore1() { totalScore += 250; currentScore += 250; }
     public void AddRouletteScore2() { totalScore += 500; currentScore += 500; }
     public void AddRouletteScore3() { totalScore += 1000; currentScore += 1000; }
+
+    public int getShootingScore() { return shootingScore; }
     public void setZero() {
         shootingScore = 0;
         scoreItem = 0;
@@ -152,7 +155,7 @@ public class PickUpItem : MonoBehaviour
     {
         txt_shootingScore.text = " " + shootingScore;
         txt_TotalScore.text = " " + totalScore;
-        txt_currentScore.text = " " + currentScore;
+        txt_currentScore.text = " " + currentScore; 
         
     }
 
