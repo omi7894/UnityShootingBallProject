@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Experimental.UIElements;
 
 public class ball_controller : MonoBehaviour
 {
     public static bool canMove = false;
-    int firemode = 0;
+    private bool firemode = true;
+    private int num = 0;
 
     [SerializeField] PickUpItem thePick;
 
@@ -24,10 +26,7 @@ public class ball_controller : MonoBehaviour
 
     [SerializeField] GameObject fireImage;
 
-
     Rigidbody myRigid;
-
-    public static bool IsJet = false;
 
     [Header("부터스 효과")]
     [SerializeField] ParticleSystem ps_boost;
@@ -36,8 +35,7 @@ public class ball_controller : MonoBehaviour
         Rball.gameObject.GetComponent<Renderer>();
         Rball.material = yellow;
 
-        fireImage.SetActive(false);
-        IsJet = false;
+
         myRigid = GetComponent<Rigidbody>();
         //초기값은 start에 넣는다.
         //GetComponent<> : <>안에있는 컴포넌트를 가져온다.
@@ -66,34 +64,42 @@ public class ball_controller : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") != 0 && canMove)
         {
 
-
             Vector3 moveDir = new Vector3(0, Input.GetAxisRaw("Vertical"), 0);
             myRigid.AddForce(moveDir * moveSpeed2);
 
         }
-        if (thePick.getShootingScore() % 3 == 0 && thePick.getShootingScore() > 0 && firemode==0)
+        if (thePick.getShootingScore() % 3 == 0 && thePick.getShootingScore() > 0)
         {
-            firemode++;
+            if (firemode)
+            {
+                firemode = false;
+                num++;
+            }
         }
-        if (firemode>0) {
-            fireImage.SetActive(true);
-        }
-        if ( firemode>0 && Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            ps_boost.Play();
-            Rball.material = red;
-            Invoke("turnOffBoost", 5f);
+        else {
+            firemode = true;
         }
 
         //Input : 마우스, 키보드, 조이스틱을 감지하는 클래스
         //GetAxisRaw 상, 하, 좌, 우에 따라 1 또는 -1을 리턴함.
         //Horizontal일 경우 좌우는 각각 -1,1   Vertical일 경우 상하는 각각 1,-1  
+        if (num > 0) { fireImage.SetActive(true); }
+        else { fireImage.SetActive(false); }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && num>0) {
+            TryBoost();
+        }
+    }
+    void TryBoost() {
+       
+            ps_boost.Play();
+            Rball.material = red;
+            Invoke("turnOffBoost", 5f);
+     
     }
     void turnOffBoost() {
         ps_boost.Stop();
         Rball.material = yellow;
-        IsJet = false;
-        firemode--;
+        num = 0;
     }
 }

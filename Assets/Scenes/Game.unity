@@ -6758,7 +6758,7 @@ MonoBehaviour:
   Rball: {fileID: 453022881}
   red: {fileID: 2100000, guid: 6706cd664ad9d6c42af3893f3167cda2, type: 2}
   yellow: {fileID: 2100000, guid: 1bd204ef83b36834cba74ea8bf72a2b4, type: 2}
-  fireImage: {fileID: 0}
+  fireImage: {fileID: 171092750}
   ps_boost: {fileID: 1480280353}
 --- !u!54 &453022884
 Rigidbody:
