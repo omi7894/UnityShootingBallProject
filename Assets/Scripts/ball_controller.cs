@@ -9,22 +9,20 @@ public class ball_controller : MonoBehaviour
 {
     public static bool canMove = false;
     private bool firemode = true;
-    private int num = 0;
+    public int num = 0;
 
     [SerializeField] PickUpItem thePick;
 
-    [Header("가로 속도변수")]
-    [SerializeField] float moveSpeed;
+    private float moveSpeed=5; //가로속도변수
 
-    [Header("세로 속도변수")]
-    [SerializeField] float moveSpeed2;
+    private float moveSpeed2=3; //세로속도변수
 
 
     [SerializeField] Renderer Rball;
     [SerializeField] Material red;
     [SerializeField] Material yellow;
 
-    [SerializeField] GameObject fireImage;
+    [SerializeField] GameObject boostUI;
 
     Rigidbody myRigid;
 
@@ -83,8 +81,16 @@ public class ball_controller : MonoBehaviour
         //Input : 마우스, 키보드, 조이스틱을 감지하는 클래스
         //GetAxisRaw 상, 하, 좌, 우에 따라 1 또는 -1을 리턴함.
         //Horizontal일 경우 좌우는 각각 -1,1   Vertical일 경우 상하는 각각 1,-1  
-        if (num > 0) { fireImage.SetActive(true); }
-        else { fireImage.SetActive(false); }
+        if (num > 0) { 
+            boostUI.SetActive(true);
+            moveSpeed = 8;
+            moveSpeed2 = 5;
+        }
+        else { 
+            boostUI.SetActive(false);
+            moveSpeed = 5;
+            moveSpeed2 = 3;
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && num>0) {
             TryBoost();
@@ -94,7 +100,7 @@ public class ball_controller : MonoBehaviour
        
             ps_boost.Play();
             Rball.material = red;
-            Invoke("turnOffBoost", 5f);
+            Invoke("turnOffBoost", 10f);
      
     }
     void turnOffBoost() {

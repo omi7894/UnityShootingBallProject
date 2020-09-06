@@ -16,6 +16,7 @@ public class Monster : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] GameObject go_EffectPrefab; //몬스터 터질때 나오는 effect
     [SerializeField] PickUpItem thePick;
+    [SerializeField] ball_controller theBall;
 
     Vector3 endPos1;
     Vector3 endPos2;
@@ -44,9 +45,14 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void OnCollisionEnter(Collision other)
     {
-        if (other.transform.CompareTag("Player")) {
+        if (other.transform.CompareTag("Player") && theBall.num==0) {
 
             other.transform.GetComponent<StatusManager>().DecreaseHp(damage);
+            Explosion();
+        }
+        if (other.transform.CompareTag("Player") && theBall.num != 0)
+        {
+            thePick.AddShootingScore();
             Explosion();
         }
         if (other.transform.CompareTag("Bullet"))
