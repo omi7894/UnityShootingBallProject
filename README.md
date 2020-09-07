@@ -13,8 +13,8 @@ UNITY GAME - SHOOTING BALL
 ------------
 ### 로그인 화면
 <div>
-<img width="400" alt="게임_로그인화면" src="https://user-images.githubusercontent.com/60821744/92360675-2f228a00-f128-11ea-84aa-a519f94a8011.PNG">
-<img width="400" alt="게임_계정생성" src="https://user-images.githubusercontent.com/60821744/92360829-6abd5400-f128-11ea-85f4-dead3f047dd6.PNG">
+<img width="450" alt="게임_로그인화면" src="https://user-images.githubusercontent.com/60821744/92360675-2f228a00-f128-11ea-84aa-a519f94a8011.PNG">
+<img width="450" alt="게임_계정생성" src="https://user-images.githubusercontent.com/60821744/92360829-6abd5400-f128-11ea-85f4-dead3f047dd6.PNG">
 </div>
 <br>
 <br>
