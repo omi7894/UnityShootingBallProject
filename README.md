@@ -21,16 +21,16 @@ UNITY GAME - SHOOTING BALL
 
 ### 게임 시작 화면
 <div>
-<img width="500" alt="게임_start화면" src="https://user-images.githubusercontent.com/60821744/92361875-0bf8da00-f12a-11ea-904d-f2c040b6bca4.PNG">
-<img width="500" alt="게임_게임시작화면" src="https://user-images.githubusercontent.com/60821744/92361895-16b36f00-f12a-11ea-9193-9a424de05769.PNG">
+<img width="450" alt="게임_start화면" src="https://user-images.githubusercontent.com/60821744/92361875-0bf8da00-f12a-11ea-904d-f2c040b6bca4.PNG">
+<img width="450" alt="게임_게임시작화면" src="https://user-images.githubusercontent.com/60821744/92361895-16b36f00-f12a-11ea-9193-9a424de05769.PNG">
 </div>
 <br>
 <br>
 
 ### 몬스터 처치
 <div>
-<img width="500" alt="게임_몬스터처치1" src="https://user-images.githubusercontent.com/60821744/92362331-d30d3500-f12a-11ea-910c-96ec0699f48b.PNG">
-<img width="500" alt="게임_몬스터처치" src="https://user-images.githubusercontent.com/60821744/92362377-e3251480-f12a-11ea-83c2-d29b51803b33.PNG">
+<img width="450" alt="게임_몬스터처치1" src="https://user-images.githubusercontent.com/60821744/92362331-d30d3500-f12a-11ea-910c-96ec0699f48b.PNG">
+<img width="450" alt="게임_몬스터처치" src="https://user-images.githubusercontent.com/60821744/92362377-e3251480-f12a-11ea-83c2-d29b51803b33.PNG">
 </div>
 
 
