@@ -32,6 +32,43 @@ UNITY GAME - SHOOTING BALL
 <img width="450" alt="게임_몬스터처치1" src="https://user-images.githubusercontent.com/60821744/92362331-d30d3500-f12a-11ea-910c-96ec0699f48b.PNG">
 <img width="450" alt="게임_몬스터처치" src="https://user-images.githubusercontent.com/60821744/92362377-e3251480-f12a-11ea-83c2-d29b51803b33.PNG">
 </div>
+<br>
+<br>
+
+### 골인지점
+<div>
+<img width="450" alt="게임_골인지점" src="https://user-images.githubusercontent.com/60821744/92364390-f7b6dc00-f12d-11ea-9cb4-dc892a1db519.PNG">
+</div>
+<br>
+<br>
+
+### 룰렛 보너스 게임
+<div>
+<img width="450" alt="게임_룰렛" src="https://user-images.githubusercontent.com/60821744/92364511-26cd4d80-f12e-11ea-8ad7-758a82072056.PNG">
+</div>
+<br>
+<br>
+
+### 스테이지 클리어
+<div>
+<img width="450" alt="게임_스테이지 클리어" src="https://user-images.githubusercontent.com/60821744/92364555-364c9680-f12e-11ea-91ed-529852daac5e.PNG">
+</div>
+<br>
+<br>
+
+### 게임 오버
+<div>
+<img width="450" alt="게임_게임오버" src="https://user-images.githubusercontent.com/60821744/92364720-6eec7000-f12e-11ea-984b-e8ea24b74897.PNG">
+</div>
+<br>
+<br>
+
+### 랭킹
+<div>
+<img width="450" alt="게임_랭킹" src="https://user-images.githubusercontent.com/60821744/92364753-7d3a8c00-f12e-11ea-84fd-4003280e4d8e.PNG">
+</div>
+<br>
+<br>
 
 
 
